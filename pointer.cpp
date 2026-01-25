@@ -29,6 +29,38 @@ public:
     {
         List = new Passenger[capacity];
     }
+    // Copy constructor (deep copy)
+    Flight(const Flight &other)
+        : flightno(other.flightno),
+          destination(other.destination),
+          capacity(other.capacity),
+          count(other.count)
+    {
+        List = new Passenger[capacity];
+        for (int i = 0; i < count; i++)
+        {
+            List[i] = other.List[i];
+        }
+    }
+
+    // Copy assignment operator (deep copy)
+    Flight &operator=(const Flight &other)
+    {
+        if (this != &other)
+        {
+            delete[] List;
+            destination = other.destination;
+            capacity = other.capacity;
+            count = other.count;
+            List = new Passenger[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                List[i] = other.List[i];
+            }
+        }
+        return *this;
+    }
+
     void addPassenger(string name, int pNum)
     {
         if (count < capacity)
