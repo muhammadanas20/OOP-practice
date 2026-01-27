@@ -51,3 +51,14 @@
 
 
 // Pro Tip for Full Marks: To prevent copying, you must declare the copy constructor in the private section of the class. This makes it inaccessible to the user and the compiler.
+// Object Sizes: Calculate the size of a class with double x, int y, and static float z. Explain your reasoning.
+
+// // size of class would be size of int 4 byte plus 8 byte of double cuz the static only store in static memory s totall for class is 12 bytes
+
+// Constructor Opaque Nature: Why can you not specify a return type for a constructor?.
+// //A constructor does not have a return type because it is called automatically by the runtime during memory allocation and object initialization. Its "return" is the initialized object itself, which is opaque (hidden) from the user.
+// Encapsulation: In a scenario like a bank, why is providing access to data only through methods (getters/setters) considered "robust" and "secure"?.
+// // we hide data for cyber attack like user don't know which are the process use behind it and what are the data meber useed in that  class
+
+// Copy Prevention: How do you make both user-defined and compiler-provided copy constructors unusable?.
+// // by putting in private to prevent
