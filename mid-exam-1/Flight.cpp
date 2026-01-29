@@ -42,7 +42,11 @@ public:
             List[i] = other.List[i];
         }
     }
-
+    // operator oveloading to print flight details easliy
+    friend ostream& operator<<(const Flight& f1,ostream& out){
+        out << "FLIGHT NO:" << f1.flightno << "| DESTINATION: " << f1.destination ;
+        return out;  // this forms a chain to rpint all objects by return output 
+    }
     // Copy assignment operator (deep copy)
     Flight &operator=(const Flight &other)
     {
