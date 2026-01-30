@@ -7,7 +7,7 @@ private:
     int passNum;
 
 public:
-    Passenger() {} // default constructor
+    Passenger():name(""),passNum(0){} // default constructor
     Passenger(string name, int PassNum) : name(name), passNum(PassNum) {}
     void display()
     {
