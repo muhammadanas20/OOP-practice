@@ -1,2 +1,2 @@
 ## OOP-Practice for Exams
-# Athunticate() - Read() - Rest() ;
+# Authenticate () - Read() - Rest() ;
