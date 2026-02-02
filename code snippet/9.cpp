@@ -38,7 +38,7 @@ public:
 void func(Test t) { } // Pass by Value
 
 int main() {
-    Test t1(5);      // Output: ___
-    Test t2 = t1;    // Output: ___ (Line A)
-    func(t2);        // Output: ___ (Line B)
+    Test t1(5);      // Output: 2___
+    Test t2 = t1;    // Output: 3___ (Line A)
+    func(t2);        // Output: _3__ (Line B)Line B: func(t2); -> Prints 3 (Copy Constructor is called because func takes the argument by value, creating a copy)
 }
