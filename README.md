@@ -1,2 +1,2 @@
 ## OOP-Practice for Exams
-# Authenticate () - Read() - Rest() ;
+# CODE() - FUN() - CREATE() ;
