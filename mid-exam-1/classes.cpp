@@ -20,7 +20,7 @@ int Animal :: id = 0;
 int main(){
    Animal cat("posh","cute");
    cat.display();
-   Animal goat("aloo","moye");
+   Animal goat("aloo","mosh");
    goat.display();
    return 0;
 }
