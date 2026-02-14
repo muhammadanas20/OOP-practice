@@ -31,13 +31,4 @@
 // Explain what happens if d1 is destroyed but d2 is still used, assuming your Deep Copy is correct.
 #include <iostream>
 using namespace std;
-class File{
-    private:
-    string fileName;
-    double sizeMB;
-    
 
-};
-int main(){
-
-}
