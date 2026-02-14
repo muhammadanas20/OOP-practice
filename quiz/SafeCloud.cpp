@@ -30,5 +30,77 @@
 // Drive d2 = d1; 
 // Explain what happens if d1 is destroyed but d2 is still used, assuming your Deep Copy is correct.
 #include <iostream>
+#include <string>
 using namespace std;
+class File{
+    private:
+    string fileName;
+    double sizeMB;
+    public:
+    File():fileName(""),sizeMB(0.0){}
+    File(string filename,double sizeMB){
+        this->fileName = filename;
+        this->sizeMB = sizeMB;
+        cout << "file created\n" ;
+    }
+};
+ // Forward declaration
 
+class Folder{
+    private:
+    string folderName;
+    File *files;
+    static int filesCount;
+    int capacity;
+    int fileCount;
+    public:
+    Folder(){}
+    Folder(string folderName,int capacity){
+        this->folderName = folderName;
+        filesCount+= capacity;
+        this->capacity = capacity;
+        this->fileCount = 0;
+        files = new File[capacity];
+        cout << "folder created\n" ;
+    }
+    Folder(const Folder& other){
+       folderName = other.folderName;
+       capacity = other.capacity;
+       fileCount = other.fileCount;
+       filesCount += capacity;
+       files = new File[other.capacity];
+       for(int i = 0; i < other.fileCount; i++){
+           files[i] = other.files[i];
+       }
+       cout << "folder copied\n" ;
+    }
+    ~Folder(){
+        delete[] files;
+        cout << "folder delete\n" ;
+    }
+  
+};
+class Drive{
+    private:
+    const int driveID;
+    Folder *root;
+    public:
+    Drive(int id):driveID(id){
+     root = new Folder("Root", 10);
+     cout << "drive created\n" ;
+    }
+    Drive(const Drive& other):driveID(other.driveID){
+        root = new Folder(*other.root);
+        cout << "drive deep copied\n" ;
+    }
+    ~Drive(){
+        delete root;
+        cout << "drive deleted\n" ;
+    }
+
+};
+int Folder::filesCount = 0;
+int main(){
+   Drive d1(101);
+   Drive d2 = d1;   
+}
