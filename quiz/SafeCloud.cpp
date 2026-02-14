@@ -31,9 +31,4 @@
 // Explain what happens if d1 is destroyed but d2 is still used, assuming your Deep Copy is correct.
 #include <iostream>
 using namespace std;
-class Safecloud{
 
-};
-int main(){
-  return 0;
-}
